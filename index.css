@@ -14,7 +14,6 @@
   box-sizing: border-box; }
 
 body {
-  background-color: #0000fe;
   margin: 0;
   color: white;
   font-family: 'PyeongChang'; }
@@ -63,7 +62,7 @@ header {
 
 section {
   border: 1px dashed white;
-  height: 100vh;
+  height: 900px;
   min-height: 900px;
   position: relative;
   overflow: hidden;
@@ -77,79 +76,97 @@ section {
       width: 600px; } }
 
 .section1 {
-  padding-top: 76px; }
-  .section1 .section1-upper {
+  background-color: #000049;
+  padding-top: 76px;
+  position: relative; }
+  .section1 .container .section1-upper {
+    position: absolute;
+    left: 0;
     width: 100vw;
     height: 420px;
+    margin: auto;
     background-color: #0000b0; }
 
 .section2 {
-  height: auto; }
+  height: auto;
+  background: linear-gradient(#000049, #0000b0); }
   .section2 .section2-main {
     width: 100vw; }
 
+.section3 {
+  background-color: #0000b0; }
+
 .section4 {
+  background-color: #0000b0;
   height: auto;
   display: flex; }
-  .section4 .section4-left {
-    flex: 1;
-    position: relative; }
-  .section4 .section4-right {
-    flex: 1;
-    position: relative; }
-  .section4 .section4-main {
-    position: absolute;
-    width: 722px;
-    bottom: 0px; }
-  .section4 .background-circle {
-    position: absolute;
-    top: 140px;
-    left: 100px;
-    width: 350px;
-    transform: rotate(80deg); }
-  .section4 .section4-sentences {
-    position: relative;
-    top: 40%; }
-    .section4 .section4-sentences .section4-title {
-      font-size: 48px;
-      font-weight: 700;
-      line-height: 66px;
-      letter-spacing: 0em; }
-    .section4 .section4-sentences .section4-description {
-      font-size: 16px;
-      font-weight: 400;
-      line-height: 28px;
-      letter-spacing: 0px; }
+  .section4 .container {
+    display: flex; }
+    .section4 .container .section4-left {
+      flex: 1;
+      position: relative; }
+    .section4 .container .section4-right {
+      flex: 1;
+      position: relative; }
+    .section4 .container .section4-main {
+      position: absolute;
+      width: 722px;
+      bottom: 0px; }
+    .section4 .container .background-circle {
+      position: absolute;
+      top: 140px;
+      left: 100px;
+      width: 350px;
+      transform: rotate(80deg); }
+    .section4 .container .section4-sentences {
+      position: relative;
+      top: 40%; }
+      .section4 .container .section4-sentences .section4-title {
+        font-size: 48px;
+        font-weight: 700;
+        line-height: 66px;
+        letter-spacing: 0em; }
+      .section4 .container .section4-sentences .section4-description {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 28px;
+        letter-spacing: 0px; }
 
 .section5 {
+  background-color: #0000b0;
   display: flex; }
-  .section5 .section5-left {
-    margin-left: 50px;
-    z-index: 10; }
-  .section5 .section5-right {
-    position: absolute;
-    right: 0px;
-    height: 100%; }
-  .section5 .section5-main1 {
-    position: absolute;
-    right: 170px;
-    bottom: 0px; }
-  .section5 .section5-main2 {
-    position: relative;
-    right: 10px; }
-  .section5 .section5-sentences {
-    position: relative;
-    top: 30%; }
-    .section5 .section5-sentences .section5-title {
-      font-size: 48px;
-      font-weight: 700;
-      line-height: 66px;
-      letter-spacing: 0em; }
-    .section5 .section5-sentences .section5-description {
-      width: 534px;
-      font-size: 16px;
-      font-weight: 400;
-      line-height: 28px;
-      letter-spacing: 0px; }
+  .section5 .container {
+    display: flex; }
+    .section5 .container .section5-left {
+      margin-left: 50px;
+      z-index: 10; }
+    .section5 .container .section5-right {
+      position: absolute;
+      right: 0px;
+      height: 100%; }
+    .section5 .container .section5-main1 {
+      position: absolute;
+      right: 170px;
+      bottom: 0px; }
+    .section5 .container .section5-main2 {
+      position: relative;
+      right: 10px; }
+    .section5 .container .section5-sentences {
+      position: relative;
+      top: 30%; }
+      .section5 .container .section5-sentences .section5-title {
+        font-size: 48px;
+        font-weight: 700;
+        line-height: 66px;
+        letter-spacing: 0em; }
+      .section5 .container .section5-sentences .section5-description {
+        width: 534px;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 28px;
+        letter-spacing: 0px; }
+
+.section6 {
+  background-color: #0000b0; }
 
 /*# sourceMappingURL=index.css.map */
