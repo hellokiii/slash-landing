@@ -15,7 +15,6 @@
 }
 
 $background-dark: #000049;
-
 $background-light: #0000b0;
 
 * {
@@ -51,32 +50,41 @@ header {
   }
 }
 
-.side-nav {
-  position: fixed;
-  display: flex;
-  flex-direction: column;
-  top: 50%;
-  transform: translate(0, -50%);
-  transition: opacity 0.5s ease-in-out 0.3s;
-  opacity: 1;
+// sticky nav
+.nav-section {
+  position: absolute;
+  height: 2700px;
+  padding: 408px 0;
+  width: 100%;
   z-index: 100;
-  .step {
+  .sticky {
+    position: sticky;
+    top: 450px;
+    height: auto;
+  }
+  .side-nav {
     display: flex;
-    width: 20px;
-    height: 20px;
-    justify-content: center;
-    border-radius: 50px;
-    border: 1px solid white;
-    font-size: 12px;
-    font-weight: 700;
+    flex-direction: column;
     transition: opacity 0.5s ease-in-out 0.3s;
-    &.active {
-      background-color: white;
-      color: black;
-    }
+    opacity: 1;
+    .step {
+      display: flex;
+      width: 20px;
+      height: 20px;
+      justify-content: center;
+      border-radius: 50px;
+      border: 1px solid white;
+      font-size: 12px;
+      font-weight: 700;
+      transition: background-color 0.8s linear;
+      &.active {
+        background-color: white;
+        color: black;
+      }
 
-    &:not(:last-child) {
-      margin-bottom: 12px;
+      &:not(:last-child) {
+        margin-bottom: 12px;
+      }
     }
   }
 }
@@ -131,7 +139,7 @@ section {
 }
 .section4 {
   background-color: $background-light;
-  height: auto;
+  // height: auto;
   display: flex;
   .container {
     display: flex;

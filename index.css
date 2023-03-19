@@ -35,30 +35,36 @@ header {
     line-height: 25px;
     letter-spacing: 0em; }
 
-.side-nav {
-  position: fixed;
-  display: flex;
-  flex-direction: column;
-  top: 50%;
-  transform: translate(0, -50%);
-  transition: opacity 0.5s ease-in-out 0.3s;
-  opacity: 1;
+.nav-section {
+  position: absolute;
+  height: 2700px;
+  padding: 408px 0;
+  width: 100%;
   z-index: 100; }
-  .side-nav .step {
+  .nav-section .sticky {
+    position: sticky;
+    top: 450px;
+    height: auto; }
+  .nav-section .side-nav {
     display: flex;
-    width: 20px;
-    height: 20px;
-    justify-content: center;
-    border-radius: 50px;
-    border: 1px solid white;
-    font-size: 12px;
-    font-weight: 700;
-    transition: opacity 0.5s ease-in-out 0.3s; }
-    .side-nav .step.active {
-      background-color: white;
-      color: black; }
-    .side-nav .step:not(:last-child) {
-      margin-bottom: 12px; }
+    flex-direction: column;
+    transition: opacity 0.5s ease-in-out 0.3s;
+    opacity: 1; }
+    .nav-section .side-nav .step {
+      display: flex;
+      width: 20px;
+      height: 20px;
+      justify-content: center;
+      border-radius: 50px;
+      border: 1px solid white;
+      font-size: 12px;
+      font-weight: 700;
+      transition: background-color 0.8s linear; }
+      .nav-section .side-nav .step.active {
+        background-color: white;
+        color: black; }
+      .nav-section .side-nav .step:not(:last-child) {
+        margin-bottom: 12px; }
 
 section {
   border: 1px dashed white;
@@ -98,7 +104,6 @@ section {
 
 .section4 {
   background-color: #0000b0;
-  height: auto;
   display: flex; }
   .section4 .container {
     display: flex; }
