@@ -3,14 +3,14 @@
   font-family: 'PyeongChang';
   font-weight: 400;
   font-style: normal;
-  src: url('./assets/font/PyeongChang-Regular.ttf') format('truetype');
+  src: url('./assets/font/PyeongChang-Regular.woff2') format('woff2');
   font-display: swap;
 }
 @font-face {
   font-family: 'PyeongChang';
   font-weight: 700;
   font-style: normal;
-  src: url('./assets/font/PyeongChang-Bold.ttf') format('truetype');
+  src: url('./assets/font/PyeongChang-Bold.woff2') format('woff2');
   font-display: swap;
 }
 * {
@@ -22,17 +22,30 @@ body {
   color: white;
   font-family: 'PyeongChang';
 }
-.navbar-container {
-  height: 60px;
+
+header {
+  position: absolute;
+  width: 100%;
+  z-index: 10;
 }
-main {
-  width: 1200px;
-  margin: 0 auto;
-  scroll-snap-type: mandatory;
-  @media screen and (max-width: 1200px) {
-    width: 600px;
+
+.navbar-container {
+  height: 76px;
+  padding: 20px 0;
+  display: flex;
+  .navbar-left {
+    flex: 1;
+  }
+  .navbar-right {
+    > span {
+      margin-left: 20px;
+      font-size: 18px;
+      line-height: 25px;
+      letter-spacing: 0em;
+    }
   }
 }
+
 .side-nav {
   position: fixed;
   display: flex;
@@ -41,6 +54,7 @@ main {
   transform: translate(0, -50%);
   transition: opacity 0.5s ease-in-out 0.3s;
   opacity: 1;
+  z-index: 100;
   .step {
     display: flex;
     width: 20px;
@@ -50,6 +64,7 @@ main {
     border: 1px solid white;
     font-size: 12px;
     font-weight: 700;
+    transition: opacity 0.5s ease-in-out 0.3s;
     &.active {
       background-color: white;
       color: black;
@@ -68,12 +83,21 @@ section {
   overflow: hidden;
   scroll-snap-align: start;
 }
-.section1 {
-  height: calc(100vh - 60px);
+.container {
+  width: 1200px;
+  margin: 0 auto;
+  @media screen and (max-width: 1200px) {
+    width: 600px;
+  }
 }
-.section1-upper {
-  height: 420px;
-  background-color: #0000b0;
+.section1 {
+  // height: calc(100vh - 60px);
+  padding-top: 76px;
+  .section1-upper {
+    width: 100vw;
+    height: 420px;
+    background-color: #0000b0;
+  }
 }
 
 .section2 {
@@ -126,33 +150,30 @@ section {
 }
 
 .section5 {
-  height: auto;
+  // height: auto;
   display: flex;
   .section5-left {
-    flex: 1;
-    position: relative;
+    margin-left: 50px;
+    z-index: 10;
   }
   .section5-right {
-    flex: 1;
-    position: relative;
-  }
-  .section5-main {
     position: absolute;
-    width: 722px;
+    right: 0px;
+    height: 100%;
+  }
+  .section5-main1 {
+    position: absolute;
+    right:170px;
     bottom: 0px;
-    // top: 69px;
-    left: 105px;
   }
-  .background-circle {
-    position: absolute;
-    top: 140px;
-    left: 200px;
-    width: 350px;
-    transform: rotate(80deg);
+  .section5-main2 {
+    position: relative;
+    right: 10px;
   }
+
   .section5-sentences {
     position: relative;
-    top: 40%;
+    top: 30%;
     .section5-title {
       font-size: 48px;
       font-weight: 700;
