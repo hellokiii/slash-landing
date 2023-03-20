@@ -10,6 +10,12 @@
   font-style: normal;
   src: url("./assets/font/PyeongChang-Bold.woff2") format("woff2");
   font-display: swap; }
+@font-face {
+  font-family: 'PyeongChang Peace';
+  font-weight: 700;
+  font-style: normal;
+  src: url("./assets/font/PyeongChangPeace-Bold.woff2") format("woff2");
+  font-display: swap; }
 * {
   box-sizing: border-box; }
 
@@ -85,13 +91,33 @@ section {
   background-color: #000049;
   padding-top: 76px;
   position: relative; }
-  .section1 .container .section1-upper {
-    position: absolute;
-    left: 0;
-    width: 100vw;
-    height: 420px;
-    margin: auto;
-    background-color: #0000b0; }
+  .section1 .container {
+    height: 100%; }
+    .section1 .container .section1-upper {
+      position: absolute;
+      left: 0;
+      width: 100vw;
+      height: 420px;
+      margin: auto;
+      background-color: #0000b0; }
+    .section1 .container .section1-bottom {
+      height: 100%;
+      padding-top: 420px;
+      display: flex;
+      flex-direction: column;
+      align-items: center; }
+      .section1 .container .section1-bottom .section1-title {
+        font-family: PyeongChang Peace;
+        font-size: 64px;
+        font-weight: 700;
+        line-height: 72px;
+        letter-spacing: 2.5px;
+        margin-top: 48px; }
+      .section1 .container .section1-bottom .section1-description {
+        width: 700px;
+        font-size: 16px;
+        line-height: 28px;
+        margin: 16px 0 48px; }
 
 .section2 {
   height: auto;
@@ -173,5 +199,27 @@ section {
 
 .section6 {
   background-color: #0000b0; }
+
+.badges {
+  display: flex; }
+
+.ios-container {
+  height: 75px;
+  width: 280px;
+  border-radius: 47px;
+  background-color: white;
+  padding: 13px 45px 19px 45px;
+  color: #000049;
+  display: flex; }
+  .ios-container .ios-sentences {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-left: 17px; }
+    .ios-container .ios-sentences .ios-subtitle {
+      font-size: 12px; }
+    .ios-container .ios-sentences .ios-title {
+      font-size: 24px;
+      font-weight: 700; }
 
 /*# sourceMappingURL=index.css.map */

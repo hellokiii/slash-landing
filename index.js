@@ -5,8 +5,8 @@ const options = {
 function activateStep3(e) {
   const observerEntry = e[0];
   const targetClassName = observerEntry.target.className;
-  const sectionNumber = targetClassName.match(/section(\d)/)[1]
-  const stepClass = `step${sectionNumber - 2}`
+  const sectionNumber = targetClassName.match(/section(\d)/)[1];
+  const stepClass = `step${sectionNumber - 2}`;
 
   if (observerEntry.isIntersecting) {
     console.log(targetClassName, observerEntry.isIntersecting, observerEntry.intersectionRatio);
@@ -21,3 +21,19 @@ let section5 = document.querySelector('.section5');
 observer.observe(section3);
 observer.observe(section4);
 observer.observe(section5);
+
+if ('content' in document.createElement('template')) {
+  // Instantiate the table with the existing HTML tbody
+  // and the row with the template
+  const section1Bottom = document.querySelector('.section1-bottom');
+  const template = document.querySelector('#ios-banner');
+
+  // Clone the new row and insert it into the table
+  const clone = template.content.cloneNode(true);
+
+
+  section1Bottom.appendChild(clone);
+
+} else {
+  console.log('stop');
+}
