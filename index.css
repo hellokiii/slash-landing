@@ -1,225 +1,288 @@
 @font-face {
-  font-family: 'PyeongChang';
+  font-family: "PyeongChang";
   font-weight: 400;
   font-style: normal;
   src: url("./assets/font/PyeongChang-Regular.woff2") format("woff2");
-  font-display: swap; }
+  font-display: swap;
+}
 @font-face {
-  font-family: 'PyeongChang';
+  font-family: "PyeongChang";
   font-weight: 700;
   font-style: normal;
   src: url("./assets/font/PyeongChang-Bold.woff2") format("woff2");
-  font-display: swap; }
+  font-display: swap;
+}
 @font-face {
-  font-family: 'PyeongChang Peace';
+  font-family: "PyeongChang Peace";
   font-weight: 700;
   font-style: normal;
   src: url("./assets/font/PyeongChangPeace-Bold.woff2") format("woff2");
-  font-display: swap; }
+  font-display: swap;
+}
 * {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   margin: 0;
   color: white;
-  font-family: 'PyeongChang'; }
+  font-family: PyeongChang;
+  font-size: 16px;
+  line-height: 28px;
+  letter-spacing: 0.2px;
+}
 
 header {
-  position: absolute;
+  position: fixed;
   width: 100%;
-  z-index: 10; }
+  z-index: 100;
+  height: 76px;
+}
+@media screen and (min-width: 1440px) {
+  header {
+    height: 91px;
+  }
+}
 
 .navbar-container {
-  height: 76px;
+  height: 100%;
   padding: 20px 0;
-  display: flex; }
-  .navbar-container .navbar-left {
-    flex: 1; }
-  .navbar-container .navbar-right > span {
-    margin-left: 20px;
-    font-size: 18px;
-    line-height: 25px;
-    letter-spacing: 0em; }
+  display: flex;
+  align-items: center;
+}
+.navbar-container .navbar-left {
+  flex: 1;
+}
+.navbar-container .navbar-left .logo {
+  width: 96px;
+  height: 20px;
+}
+.navbar-container .navbar-right > span {
+  margin-left: 20px;
+  font-size: 18px;
+  line-height: 25px;
+  letter-spacing: 0em;
+}
+
+section {
+  height: 900px;
+  position: sticky;
+  top: 0;
+  overflow: hidden;
+  scroll-snap-align: start;
+}
+@media screen and (min-width: 1200px) {
+  section {
+    height: 1080px;
+  }
+}
+
+.container {
+  width: 1200px;
+  margin: 0 auto;
+  height: 100%;
+}
+
+.section1 {
+  background-color: #000049;
+  padding-top: 76px;
+}
+@media screen and (min-width: 1440px) {
+  .section1 {
+    padding-top: 91px;
+  }
+}
+.section1 .section1-upper {
+  position: absolute;
+  left: 0;
+  width: 100vw;
+  height: 420px;
+  margin: auto;
+  background-color: #0000b0;
+}
+@media screen and (min-width: 1440px) {
+  .section1 .section1-upper {
+    height: 504px;
+  }
+}
+.section1 .section1-upper img {
+  width: 100%;
+  height: 100%;
+}
+.section1 .section1-bottom {
+  height: 100%;
+  padding-top: 420px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media screen and (min-width: 1440px) {
+  .section1 .section1-bottom {
+    padding-top: 504px;
+  }
+}
+.section1 .section1-bottom .section1-title {
+  font-family: PyeongChang Peace;
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 72px;
+  letter-spacing: 2.5px;
+  margin-top: 67px;
+}
+.section1 .section1-bottom .section1-description {
+  width: 720px;
+  line-height: 28px;
+  margin: 16px 0 48px;
+  text-align: center;
+}
+.section1 .section1-bottom .badge-container {
+  display: flex;
+}
+.section1 .section1-bottom .badge-container img:first-child {
+  margin-right: 46px;
+}
+
+.section2 {
+  height: auto;
+  background: linear-gradient(#000049, #0000b0);
+}
+.section2 .section2-main {
+  width: 100vw;
+}
+
+.section3 {
+  background-color: #0000b0;
+}
+
+.section4 {
+  background-color: #0000b0;
+  display: flex;
+}
+.section4 .container {
+  display: flex;
+}
+.section4 .container .section4-left {
+  flex: 1;
+  position: relative;
+}
+.section4 .container .section4-right {
+  flex: 1;
+  position: relative;
+}
+.section4 .container .section4-main {
+  position: absolute;
+  width: 722px;
+  bottom: 0px;
+}
+.section4 .container .background-circle {
+  position: absolute;
+  top: 140px;
+  left: 100px;
+  width: 350px;
+  transform: rotate(80deg);
+}
+.section4 .container .section4-sentences {
+  position: relative;
+  top: 40%;
+}
+.section4 .container .section4-sentences .section4-title {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 66px;
+  letter-spacing: 0em;
+}
+.section4 .container .section4-sentences .section4-description {
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: 0px;
+}
+
+.section5 {
+  background-color: #0000b0;
+  display: flex;
+}
+.section5 .container {
+  display: flex;
+}
+.section5 .container .section5-left {
+  margin-left: 50px;
+  z-index: 10;
+}
+.section5 .container .section5-right {
+  position: absolute;
+  right: 0px;
+  height: 100%;
+}
+.section5 .container .section5-main1 {
+  position: absolute;
+  right: 170px;
+  bottom: 0px;
+}
+.section5 .container .section5-main2 {
+  position: relative;
+  right: 10px;
+}
+.section5 .container .section5-sentences {
+  position: relative;
+  top: 30%;
+}
+.section5 .container .section5-sentences .section5-title {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 66px;
+  letter-spacing: 0em;
+}
+.section5 .container .section5-sentences .section5-description {
+  width: 534px;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: 0px;
+}
+
+.section6 {
+  background-color: #0000b0;
+}
 
 .nav-section {
   position: absolute;
   height: 2700px;
   padding: 408px 0;
   width: 100%;
-  z-index: 100; }
-  .nav-section .sticky {
-    position: sticky;
-    top: 450px;
-    height: auto; }
-  .nav-section .side-nav {
-    display: flex;
-    flex-direction: column;
-    transition: opacity 0.5s ease-in-out 0.3s;
-    opacity: 1; }
-    .nav-section .side-nav .step {
-      display: flex;
-      width: 20px;
-      height: 20px;
-      justify-content: center;
-      border-radius: 50px;
-      border: 1px solid white;
-      font-size: 12px;
-      font-weight: 700;
-      transition: background-color 0.8s linear; }
-      .nav-section .side-nav .step.active {
-        background-color: white;
-        color: black; }
-      .nav-section .side-nav .step:not(:last-child) {
-        margin-bottom: 12px; }
-
-section {
-  border: 1px dashed white;
-  height: 900px;
-  min-height: 900px;
-  position: relative;
-  overflow: hidden;
-  scroll-snap-align: start; }
-
-.container {
-  width: 1200px;
-  margin: 0 auto; }
-  @media screen and (max-width: 1200px) {
-    .container {
-      width: 600px; } }
-
-.section1 {
-  background-color: #000049;
-  padding-top: 76px;
-  position: relative; }
-  .section1 .container {
-    height: 100%; }
-    .section1 .container .section1-upper {
-      position: absolute;
-      left: 0;
-      width: 100vw;
-      height: 420px;
-      margin: auto;
-      background-color: #0000b0; }
-    .section1 .container .section1-bottom {
-      height: 100%;
-      padding-top: 420px;
-      display: flex;
-      flex-direction: column;
-      align-items: center; }
-      .section1 .container .section1-bottom .section1-title {
-        font-family: PyeongChang Peace;
-        font-size: 64px;
-        font-weight: 700;
-        line-height: 72px;
-        letter-spacing: 2.5px;
-        margin-top: 48px; }
-      .section1 .container .section1-bottom .section1-description {
-        width: 700px;
-        font-size: 16px;
-        line-height: 28px;
-        margin: 16px 0 48px; }
-
-.section2 {
+  z-index: 10;
+}
+.nav-section .sticky {
+  position: sticky;
+  top: 450px;
   height: auto;
-  background: linear-gradient(#000049, #0000b0); }
-  .section2 .section2-main {
-    width: 100vw; }
-
-.section3 {
-  background-color: #0000b0; }
-
-.section4 {
-  background-color: #0000b0;
-  display: flex; }
-  .section4 .container {
-    display: flex; }
-    .section4 .container .section4-left {
-      flex: 1;
-      position: relative; }
-    .section4 .container .section4-right {
-      flex: 1;
-      position: relative; }
-    .section4 .container .section4-main {
-      position: absolute;
-      width: 722px;
-      bottom: 0px; }
-    .section4 .container .background-circle {
-      position: absolute;
-      top: 140px;
-      left: 100px;
-      width: 350px;
-      transform: rotate(80deg); }
-    .section4 .container .section4-sentences {
-      position: relative;
-      top: 40%; }
-      .section4 .container .section4-sentences .section4-title {
-        font-size: 48px;
-        font-weight: 700;
-        line-height: 66px;
-        letter-spacing: 0em; }
-      .section4 .container .section4-sentences .section4-description {
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 28px;
-        letter-spacing: 0px; }
-
-.section5 {
-  background-color: #0000b0;
-  display: flex; }
-  .section5 .container {
-    display: flex; }
-    .section5 .container .section5-left {
-      margin-left: 50px;
-      z-index: 10; }
-    .section5 .container .section5-right {
-      position: absolute;
-      right: 0px;
-      height: 100%; }
-    .section5 .container .section5-main1 {
-      position: absolute;
-      right: 170px;
-      bottom: 0px; }
-    .section5 .container .section5-main2 {
-      position: relative;
-      right: 10px; }
-    .section5 .container .section5-sentences {
-      position: relative;
-      top: 30%; }
-      .section5 .container .section5-sentences .section5-title {
-        font-size: 48px;
-        font-weight: 700;
-        line-height: 66px;
-        letter-spacing: 0em; }
-      .section5 .container .section5-sentences .section5-description {
-        width: 534px;
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 28px;
-        letter-spacing: 0px; }
-
-.section6 {
-  background-color: #0000b0; }
-
-.badges {
-  display: flex; }
-
-.ios-container {
-  height: 75px;
-  width: 280px;
-  border-radius: 47px;
+}
+.nav-section .side-nav {
+  display: flex;
+  flex-direction: column;
+  transition: opacity 0.5s ease-in-out 0.3s;
+  opacity: 1;
+}
+.nav-section .side-nav .step {
+  display: flex;
+  width: 20px;
+  height: 20px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  border: 1px solid white;
+  font-size: 12px;
+  font-weight: 700;
+  transition: background-color 0.8s linear;
+}
+.nav-section .side-nav .step.active {
   background-color: white;
-  padding: 13px 45px 19px 45px;
-  color: #000049;
-  display: flex; }
-  .ios-container .ios-sentences {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    margin-left: 17px; }
-    .ios-container .ios-sentences .ios-subtitle {
-      font-size: 12px; }
-    .ios-container .ios-sentences .ios-title {
-      font-size: 24px;
-      font-weight: 700; }
+  color: black;
+}
+.nav-section .side-nav .step:not(:last-child) {
+  margin-bottom: 12px;
+}
 
 /*# sourceMappingURL=index.css.map */
