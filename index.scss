@@ -1,45 +1,5 @@
 //npx sass --watch index.scss:index.css
-@font-face {
-  font-family: 'PyeongChang';
-  font-weight: 400;
-  font-style: normal;
-  src: url('./assets/font/PyeongChang-Regular.woff2') format('woff2');
-  font-display: swap;
-}
-@font-face {
-  font-family: 'PyeongChang';
-  font-weight: 700;
-  font-style: normal;
-  src: url('./assets/font/PyeongChang-Bold.woff2') format('woff2');
-  font-display: swap;
-}
-@font-face {
-  font-family: 'PyeongChang Peace';
-  font-weight: 700;
-  font-style: normal;
-  src: url('./assets/font/PyeongChangPeace-Bold.woff2') format('woff2');
-  font-display: swap;
-}
-
-$primary: #000049;
-$primary-light: #ccccdb;
-$secondary-blue: #0000b0;
-$secondary-lime: #b2ff85;
-
-* {
-  box-sizing: border-box;
-}
-html {
-  scroll-behavior: smooth;
-}
-body {
-  margin: 0;
-  color: white;
-  font-family: PyeongChang;
-  font-size: 16px;
-  line-height: 28px;
-  letter-spacing: 0.2px;
-}
+@import './common.scss';
 
 // header
 header {
@@ -67,9 +27,6 @@ header {
   .navbar-right {
     > span {
       margin-left: 20px;
-      font-size: 18px;
-      line-height: 25px;
-      letter-spacing: 0em;
     }
   }
 }
@@ -114,9 +71,10 @@ section {
       height: 504px;
     }
 
-    img {
+    video {
       width: 100%;
       height: 100%;
+      object-fit: fill;
     }
   }
 
@@ -130,24 +88,13 @@ section {
       padding-top: 504px;
     }
     .section1-title {
-      font-family: PyeongChang Peace;
-      font-size: 64px;
-      font-weight: 700;
-      line-height: 72px;
-      letter-spacing: 2.5px;
+      @include font-title;
       margin-top: 67px;
     }
     .section1-description {
       width: 720px;
-      line-height: 28px;
       margin: 16px 0 48px;
       text-align: center;
-    }
-    .badge-container {
-      display: flex;
-      img:first-child {
-        margin-right: 46px;
-      }
     }
   }
 }
@@ -163,7 +110,13 @@ section {
 }
 .section3 {
   background-color: $secondary-blue;
+  video {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
 }
+
 .section4 {
   background-color: $secondary-blue;
   // height: auto;
@@ -174,6 +127,9 @@ section {
     .section4-left {
       flex: 1;
       position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
     .section4-right {
       flex: 1;
@@ -183,29 +139,12 @@ section {
       position: absolute;
       width: 722px;
       bottom: 0px;
-      // top: 69px;
-      // left: 105px;
-    }
-    .background-circle {
-      position: absolute;
-      top: 140px;
-      left: 100px;
-      width: 350px;
-      transform: rotate(80deg);
     }
     .section4-sentences {
       position: relative;
       top: 40%;
       .section4-title {
-        font-size: 48px;
-        font-weight: 700;
-        line-height: 66px;
-        letter-spacing: 0em;
-      }
-      .section4-description {
-        font-weight: 400;
-        line-height: 28px;
-        letter-spacing: 0px;
+        @include font-subtitle;
       }
     }
   }
@@ -240,24 +179,30 @@ section {
       position: relative;
       top: 30%;
       .section5-title {
-        font-size: 48px;
-        font-weight: 700;
-        line-height: 66px;
-        letter-spacing: 0em;
+        @include font-subtitle;
       }
       .section5-description {
         width: 534px;
-        font-weight: 400;
-        line-height: 28px;
-        letter-spacing: 0px;
       }
     }
   }
 }
 .section6 {
   background-color: $secondary-blue;
+  .section6-title {
+    @include font-title;
+    margin-top: 350px;
+    margin-bottom: 48px;
+    text-align: center;
+  }
 }
-
+.badge-container {
+  display: flex;
+  justify-content: center;
+  img:first-child {
+    margin-right: 46px;
+  }
+}
 // sticky nav
 .nav-section {
   position: absolute;
@@ -297,4 +242,3 @@ section {
     }
   }
 }
-

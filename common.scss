@@ -1,0 +1,63 @@
+
+@font-face {
+  font-family: 'PyeongChang';
+  font-weight: 400;
+  font-style: normal;
+  src: url('./assets/font/PyeongChang-Regular.woff2') format('woff2');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'PyeongChang';
+  font-weight: 700;
+  font-style: normal;
+  src: url('./assets/font/PyeongChang-Bold.woff2') format('woff2');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'PyeongChang Peace';
+  font-weight: 700;
+  font-style: normal;
+  src: url('./assets/font/PyeongChangPeace-Bold.woff2') format('woff2');
+  font-display: swap;
+}
+
+// color
+$primary: #000049;
+$primary-light: #ccccdb;
+$secondary-blue: #0000b0;
+$secondary-lime: #b2ff85;
+
+// font
+@mixin font-title {
+  font-family: PyeongChang Peace;
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 72px;
+  letter-spacing: 2px;
+}
+@mixin font-subtitle {
+  font-family: PyeongChang;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 64px;
+  letter-spacing: 2px;
+}
+@mixin font-description {
+  font-family: PyeongChang;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: 0.2px;
+}
+
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  color: white;
+  @include font-description;
+}
