@@ -32,7 +32,8 @@ header {
 }
 
 // section
-section {
+section,
+footer {
   // border: 1px dashed white;
   height: 900px;
   position: sticky;
@@ -40,7 +41,7 @@ section {
   overflow: hidden;
   scroll-snap-align: start;
 
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1440px) {
     height: 1080px;
   }
 }
@@ -68,7 +69,7 @@ section {
     background-color: $secondary-blue;
 
     @media screen and (min-width: 1440px) {
-      height: 504px;
+      height: 560px;
     }
 
     video {
@@ -85,7 +86,7 @@ section {
     flex-direction: column;
     align-items: center;
     @media screen and (min-width: 1440px) {
-      padding-top: 504px;
+      padding-top: 560px;
     }
     .section1-title {
       @include font-title;
@@ -152,7 +153,7 @@ section {
 
 .section5 {
   background-color: $secondary-blue;
-  // height: auto;
+  position: relative;
   display: flex;
   .container {
     display: flex;
@@ -187,15 +188,7 @@ section {
     }
   }
 }
-.section6 {
-  background-color: $secondary-blue;
-  .section6-title {
-    @include font-title;
-    margin-top: 350px;
-    margin-bottom: 48px;
-    text-align: center;
-  }
-}
+
 .badge-container {
   display: flex;
   justify-content: center;
@@ -239,6 +232,87 @@ section {
       &:not(:last-child) {
         margin-bottom: 12px;
       }
+    }
+  }
+}
+
+// footer
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  position: relative;
+  bottom: 0px;
+  &.section6 {
+    background-color: $secondary-blue;
+    position: relative;
+    .section6-title {
+      @include font-title;
+      margin-top: 350px;
+      margin-bottom: 48px;
+      text-align: center;
+    }
+  }
+  .container {
+    position: relative;
+    .company-info {
+      position: absolute;
+      width: 100%;
+      bottom: 84px;
+    }
+  }
+  .footer-title {
+    @include font-footer-title;
+    margin-bottom: 16px;
+  }
+  .footer-suttitle {
+    @include font-footer-subtitle;
+    margin-bottom: 12px;
+    span {
+      margin-right: 15px;
+      &:last-child {
+        padding-left: 14px;
+        border-left: 1px solid white;
+      }
+    }
+  }
+  .footer-description {
+    @include font-footer-description;
+    margin-bottom: 10px;
+    span {
+      margin-right: 4px;
+      &:last-child {
+        padding-left: 4px;
+        border-left: 0.5px solid white;
+      }
+    }
+  }
+  .footer-contact {
+    @include font-footer-description;
+    border-top: 0.5px solid white;
+    padding-top: 12px;
+    span {
+      margin-right: 4px;
+      &:last-child {
+        padding-left: 4px;
+        border-left: 1px solid white;
+      }
+    }
+  }
+  .footer-circle-container {
+    position: absolute;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    .footer-circle {
+      display: inline-block;
+      $size: 653;
+      border-bottom-right-radius: $size * 1px;
+      border-top-right-radius: $size * 1px;
+      height: $size * 1px;
+      width: #{$size/2}px;
+      background-color: $primary;
+      margin: auto 0;
     }
   }
 }
