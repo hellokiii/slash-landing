@@ -387,6 +387,14 @@ footer .footer-contact span:last-child {
   padding-left: 4px;
   border-left: 1px solid white;
 }
+footer .footer-icon {
+  margin-top: 20px;
+  display: flex;
+  justify-content: end;
+}
+footer .footer-icon img {
+  margin-left: 12px;
+}
 footer .footer-circle-container {
   position: absolute;
   height: 100%;

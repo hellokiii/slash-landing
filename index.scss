@@ -299,6 +299,14 @@ footer {
       }
     }
   }
+  .footer-icon {
+    margin-top: 20px;
+    display: flex;
+    justify-content: end;
+    img {
+      margin-left: 12px;
+    }
+  }
   .footer-circle-container {
     position: absolute;
     height: 100%;
