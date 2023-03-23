@@ -124,26 +124,25 @@ footer {
   display: flex;
   .container {
     display: flex;
-
     .section4-left {
       flex: 1;
       position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      .section4-main {
+        position: absolute;
+        margin-top: 28px;
+        width: 977px;
+      }
     }
     .section4-right {
       flex: 1;
       position: relative;
-    }
-    .section4-main {
-      position: absolute;
-      width: 722px;
-      bottom: 0px;
+      display: flex;
+      align-items: end;
+      justify-content: flex-end;
     }
     .section4-sentences {
       position: relative;
-      top: 40%;
+      margin-bottom: 70px;
       .section4-title {
         @include font-subtitle;
       }
@@ -156,35 +155,31 @@ footer {
   position: relative;
   display: flex;
   .container {
+    position: relative;
     display: flex;
     .section5-left {
       margin-left: 50px;
       z-index: 10;
+      .section5-sentences {
+        position: relative;
+        top: 30%;
+        .section5-title {
+          @include font-subtitle;
+        }
+        .section5-description {
+          width: 534px;
+        }
+      }
     }
     .section5-right {
       position: absolute;
-      right: 0px;
+      right: 30px;
+      top: 8px;
       height: 100%;
     }
-    .section5-main1 {
-      position: absolute;
-      right: 170px;
-      bottom: 0px;
-    }
-    .section5-main2 {
-      position: relative;
-      right: 10px;
-    }
-
-    .section5-sentences {
-      position: relative;
-      top: 30%;
-      .section5-title {
-        @include font-subtitle;
-      }
-      .section5-description {
-        width: 534px;
-      }
+    .section5-main {
+      height: 883px;
+      width: 681px;
     }
   }
 }
