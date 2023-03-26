@@ -276,15 +276,12 @@ footer {
 
 .nav-section {
   position: absolute;
-  height: 2700px;
-  padding: 408px 0;
   width: 100%;
-  z-index: 10;
 }
 .nav-section .sticky {
   position: sticky;
-  top: 450px;
   height: auto;
+  z-index: 10;
 }
 .nav-section .side-nav {
   margin-left: 9px;
