@@ -100,45 +100,6 @@ header {
     height: 60px;
   }
 }
-header .side-slider {
-  position: fixed;
-  top: 0px;
-  left: -180px;
-  width: 180px;
-  height: 100vh;
-  min-height: 800px;
-  background: #ffffff;
-  border-radius: 0px 8px 8px 0px;
-  padding: 5px 16px 16px 20px;
-  transition: transform 0.5s ease-in-out 0.3s;
-}
-header .side-slider.active {
-  display: block;
-  transform: translate(180px, 0);
-}
-header .side-slider .close-side-slider {
-  display: flex;
-  justify-content: end;
-}
-header .side-slider .close-side-slider img {
-  position: relative;
-  right: -10px;
-}
-header .side-slider .link-container {
-  color: black;
-  font-family: Pretendard;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 24px;
-  letter-spacing: 0.2px;
-  text-align: left;
-}
-header .side-slider .link-container > div {
-  display: flex;
-  align-items: center;
-  height: 40px;
-  border-bottom: 0.5px solid #CCCCDB;
-}
 
 .navbar-container {
   padding: 20px 0;
@@ -182,6 +143,49 @@ header .side-slider .link-container > div {
   color: white;
 }
 .navbar-container .navbar-right > span a:not(:hover) {
+  text-decoration: none;
+}
+
+.side-slider {
+  position: fixed;
+  top: 0px;
+  left: -180px;
+  width: 180px;
+  height: 100vh;
+  min-height: 800px;
+  background: #ffffff;
+  border-radius: 0px 8px 8px 0px;
+  padding: 5px 16px 16px 20px;
+  transition: transform 0.5s ease-in-out 0.3s;
+}
+.side-slider.active {
+  display: block;
+  transform: translate(180px, 0);
+}
+.side-slider .close-side-slider {
+  display: flex;
+  justify-content: end;
+}
+.side-slider .close-side-slider img {
+  position: relative;
+  right: -10px;
+}
+.side-slider .link-container {
+  font-family: Pretendard;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0.2px;
+  text-align: left;
+}
+.side-slider .link-container > div > a {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  border-bottom: 0.5px solid #ccccdb;
+  color: black;
+}
+.side-slider .link-container > div > a:not(:hover) {
   text-decoration: none;
 }
 
@@ -280,6 +284,7 @@ footer {
 }
 @media (max-width: 576px) {
   .section1 .section1-bottom {
+    height: 300px;
     padding-top: 32px;
   }
 }
