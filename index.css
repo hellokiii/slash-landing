@@ -163,6 +163,7 @@ footer {
   .section5 {
     background-color: white !important;
     position: static;
+    height: auto;
   }
   .section3 .container,
   .section4 .container,
@@ -173,6 +174,7 @@ footer {
     height: 437px;
     margin: 8px auto;
     padding: 24px 20px 0px 20px;
+    overflow: hidden;
   }
 }
 .section1 {
@@ -281,7 +283,6 @@ footer {
 @media (max-width: 600px) {
   .section4 .container {
     flex-direction: column-reverse;
-    justify-content: space-between;
     align-items: center;
   }
 }
@@ -326,7 +327,6 @@ footer {
 @media (max-width: 600px) {
   .section4 .container .section4-sentences {
     margin-bottom: 0px;
-    margin-top: 24px;
   }
   .section4 .container .section4-sentences .section4-description {
     margin-bottom: 0px;
@@ -362,6 +362,12 @@ footer {
   position: relative;
   display: flex;
 }
+@media (max-width: 600px) {
+  .section5 .container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
 .section5 .container .section5-left {
   margin-left: 78px;
   margin-top: 316px;
@@ -371,6 +377,11 @@ footer {
   .section5 .container .section5-left {
     margin-left: 55px;
     margin-top: 406px;
+  }
+}
+@media (max-width: 600px) {
+  .section5 .container .section5-left {
+    margin: 0px;
   }
 }
 .section5 .container .section5-left .section5-sentences .section5-title {
@@ -388,8 +399,10 @@ footer {
     letter-spacing: 0px;
   }
 }
-.section5 .container .section5-left .section5-sentences .section5-description {
-  width: 534px;
+@media (max-width: 600px) {
+  .section5 .container .section5-left .section5-sentences .section5-title {
+    margin: 0px;
+  }
 }
 .section5 .container .section5-right {
   position: absolute;
@@ -403,9 +416,20 @@ footer {
     margin-top: 98px;
   }
 }
-.section5 .container .section5-main {
+@media (max-width: 600px) {
+  .section5 .container .section5-right {
+    position: static;
+  }
+}
+.section5 .container .section5-right .section5-main {
   height: 883px;
   width: 681px;
+}
+@media (max-width: 600px) {
+  .section5 .container .section5-right .section5-main {
+    height: 316px;
+    width: 324px;
+  }
 }
 
 .badge-container {
@@ -415,6 +439,7 @@ footer {
 @media (max-width: 600px) {
   .badge-container {
     flex-direction: column;
+    align-items: center;
   }
   .badge-container a:first-child {
     margin-bottom: 16px;
@@ -425,6 +450,11 @@ footer {
 }
 .badge-container a:first-child {
   margin-right: 46px;
+}
+@media (max-width: 600px) {
+  .badge-container a:first-child {
+    margin-right: 0px;
+  }
 }
 @media (max-width: 600px) {
   .badge-container img {
@@ -468,18 +498,25 @@ footer {
   margin-bottom: 12px;
 }
 
-footer {
+footer.section6 {
   display: flex;
   flex-direction: column;
   align-items: stretch;
   position: relative;
   bottom: 0px;
-}
-footer.section6 {
   background-color: #0000b0;
   position: relative;
 }
-footer.section6 .section6-title {
+@media (max-width: 600px) {
+  footer.section6 {
+    height: 538px;
+    background-color: #0B2283;
+  }
+}
+footer.section6 .container {
+  position: relative;
+}
+footer.section6 .container .section6-title {
   font-family: PyeongChang Peace;
   font-size: 64px;
   font-weight: 700;
@@ -490,30 +527,39 @@ footer.section6 .section6-title {
   text-align: center;
 }
 @media (max-width: 600px) {
-  footer.section6 .section6-title {
+  footer.section6 .container .section6-title {
     font-size: 24px;
     line-height: 36px;
   }
 }
 @media (min-width: 1440px) {
-  footer.section6 .section6-title {
+  footer.section6 .container .section6-title {
     margin-top: 439px;
   }
 }
-footer .container {
-  position: relative;
+@media (max-width: 600px) {
+  footer.section6 .container .section6-title {
+    margin-top: 48px;
+    margin-bottom: 16px;
+  }
 }
-footer .container .company-info {
+footer.section6 .container .company-info {
   position: absolute;
   width: 100%;
   bottom: 32px;
 }
 @media (min-width: 1440px) {
-  footer .container .company-info {
+  footer.section6 .container .company-info {
     bottom: 122px;
   }
 }
-footer .footer-title {
+@media (max-width: 600px) {
+  footer.section6 .container .company-info {
+    position: relative;
+    margin-top: 58px;
+  }
+}
+footer.section6 .footer-title {
   font-family: Pretendard;
   font-size: 24px;
   font-weight: 700;
@@ -522,7 +568,7 @@ footer .footer-title {
   margin-bottom: 16px;
   margin-left: 3px;
 }
-footer .footer-suttitle {
+footer.section6 .footer-suttitle {
   font-family: Pretendard;
   font-size: 14px;
   font-weight: 500;
@@ -532,14 +578,14 @@ footer .footer-suttitle {
   margin-bottom: 12px;
   margin-left: 3px;
 }
-footer .footer-suttitle span {
+footer.section6 .footer-suttitle span {
   margin-right: 15px;
 }
-footer .footer-suttitle span:last-child {
+footer.section6 .footer-suttitle span:last-child {
   padding-left: 14px;
   border-left: 1px solid white;
 }
-footer .footer-description {
+footer.section6 .footer-description {
   font-family: Pretendard;
   font-size: 12px;
   font-weight: 400;
@@ -547,14 +593,19 @@ footer .footer-description {
   letter-spacing: 0.2px;
   margin-bottom: 10px;
 }
-footer .footer-description span {
+footer.section6 .footer-description span {
   margin-right: 4px;
 }
-footer .footer-description span:last-child {
+@media (max-width: 600px) {
+  footer.section6 .footer-description span {
+    margin-right: 0px;
+  }
+}
+footer.section6 .footer-description span:last-child {
   padding-left: 4px;
   border-left: 0.5px solid white;
 }
-footer .footer-contact {
+footer.section6 .footer-contact {
   font-family: Pretendard;
   font-size: 12px;
   font-weight: 400;
@@ -563,44 +614,67 @@ footer .footer-contact {
   border-top: 0.5px solid white;
   padding-top: 12px;
 }
-footer .footer-contact span {
+footer.section6 .footer-contact span {
   margin-right: 4px;
 }
-footer .footer-contact span:last-child {
+footer.section6 .footer-contact span:last-child {
   padding-left: 4px;
   border-left: 1px solid white;
 }
-footer .footer-icon {
+footer.section6 .footer-icon {
   margin-top: 20px;
   display: flex;
   justify-content: end;
 }
-footer .footer-icon img {
+@media (max-width: 600px) {
+  footer.section6 .footer-icon {
+    margin-top: 12px;
+    justify-content: start;
+  }
+  footer.section6 .footer-icon img {
+    margin-left: 0px !important;
+    margin-right: 12px;
+  }
+}
+footer.section6 .footer-icon img {
   margin-left: 12px;
 }
-footer .footer-circle-container {
+footer.section6 .footer-circle-container {
   position: absolute;
   height: 100%;
   display: flex;
   align-items: center;
 }
 @media (min-width: 1440px) {
-  footer .footer-circle-container {
+  footer.section6 .footer-circle-container {
     left: 240px;
   }
 }
-footer .footer-circle-container .footer-circle {
+@media (max-width: 600px) {
+  footer.section6 .footer-circle-container {
+    align-items: inherit;
+    left: -26px;
+    top: 13px;
+  }
+}
+footer.section6 .footer-circle-container .footer-circle {
   display: inline-block;
   height: 653px;
   width: 326.5px;
 }
 @media (min-width: 1440px) {
-  footer .footer-circle-container .footer-circle {
+  footer.section6 .footer-circle-container .footer-circle {
     height: 783px;
     width: 326.5px;
   }
 }
-footer .footer-circle-container .footer-circle img {
+@media (max-width: 600px) {
+  footer.section6 .footer-circle-container .footer-circle {
+    height: 278px;
+    width: 139px;
+  }
+}
+footer.section6 .footer-circle-container .footer-circle img {
   height: 100%;
   width: 100%;
 }

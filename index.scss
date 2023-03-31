@@ -68,6 +68,7 @@ footer {
   .section5 {
     background-color: white !important;
     position: static;
+    height: auto;
     .container {
       width: 340px;
       background-color: #0000b0;
@@ -75,6 +76,7 @@ footer {
       height: 437px;
       margin: 8px auto;
       padding: 24px 20px 0px 20px;
+      overflow: hidden;
     }
   }
 }
@@ -162,8 +164,6 @@ footer {
     display: flex;
     @include mobile {
       flex-direction: column-reverse;
-      // flex-wrap: wrap-reverse;
-      justify-content: space-between;
       align-items: center;
     }
     .section4-left {
@@ -199,7 +199,6 @@ footer {
       }
       @include mobile {
         margin-bottom: 0px;
-        margin-top: 24px;
         .section4-description {
           margin-bottom: 0px;
         }
@@ -222,6 +221,10 @@ footer {
   .container {
     position: relative;
     display: flex;
+    @include mobile {
+      flex-direction: column;
+      align-items: center;
+    }
     .section5-left {
       margin-left: 78px;
       margin-top: 316px;
@@ -230,13 +233,16 @@ footer {
         margin-left: 55px;
         margin-top: 406px;
       }
+      @include mobile {
+        margin: 0px;
+      }
       .section5-sentences {
         .section5-title {
           @include font-subtitle;
           margin: 20px 0;
-        }
-        .section5-description {
-          width: 534px;
+          @include mobile {
+            margin: 0px;
+          }
         }
       }
     }
@@ -244,16 +250,22 @@ footer {
       position: absolute;
       right: 30px;
       margin-top: 8px;
-      // top: 8px;
       height: 100%;
       @include large-pc {
         right: 56px;
         margin-top: 98px;
       }
-    }
-    .section5-main {
-      height: 883px;
-      width: 681px;
+      @include mobile {
+        position: static;
+      }
+      .section5-main {
+        height: 883px;
+        width: 681px;
+        @include mobile {
+          height: 316px;
+          width: 324px;
+        }
+      }
     }
   }
 }
@@ -264,20 +276,20 @@ footer {
 
   @include mobile {
     flex-direction: column;
+    align-items: center;
     a:first-child {
       margin-bottom: 16px;
       img {
         width: 180px;
       }
     }
-    //   &:last-child {
-    //     margin-top: 16px;
-    //   }
-    // }
   }
 
   a:first-child {
     margin-right: 46px;
+    @include mobile {
+      margin-right: 0px;
+    }
   }
   @include mobile {
     img {
@@ -323,14 +335,19 @@ footer {
 }
 
 // footer
-footer {
+footer.section6 {
   display: flex;
   flex-direction: column;
   align-items: stretch;
   position: relative;
   bottom: 0px;
-  &.section6 {
-    background-color: $secondary-blue;
+  background-color: $secondary-blue;
+  position: relative;
+  @include mobile {
+    height: 538px;
+    background-color: $light-blue
+  }
+  .container {
     position: relative;
     .section6-title {
       @include font-title;
@@ -340,16 +357,21 @@ footer {
       @include large-pc {
         margin-top: 439px;
       }
+      @include mobile {
+        margin-top: 48px;
+        margin-bottom: 16px;
+      }
     }
-  }
-  .container {
-    position: relative;
     .company-info {
       position: absolute;
       width: 100%;
       bottom: 32px;
       @include large-pc {
         bottom: 122px;
+      }
+      @include mobile {
+        position: relative;
+        margin-top: 58px;
       }
     }
   }
@@ -375,6 +397,9 @@ footer {
     margin-bottom: 10px;
     span {
       margin-right: 4px;
+      @include mobile {
+        margin-right: 0px;
+      }
       &:last-child {
         padding-left: 4px;
         border-left: 0.5px solid white;
@@ -397,6 +422,14 @@ footer {
     margin-top: 20px;
     display: flex;
     justify-content: end;
+    @include mobile {
+      margin-top: 12px;
+      justify-content: start;
+      img {
+        margin-left: 0px !important;
+        margin-right: 12px;
+      }
+    }
     img {
       margin-left: 12px;
     }
@@ -409,6 +442,11 @@ footer {
     @include large-pc {
       left: 240px;
     }
+    @include mobile {
+      align-items: inherit;
+      left: -26px;
+      top: 13px;
+    }
     .footer-circle {
       display: inline-block;
       height: 653px;
@@ -416,6 +454,10 @@ footer {
       @include large-pc {
         height: 783px;
         width: 326.5px;
+      }
+      @include mobile {
+        height: 278px;
+        width: 139px;
       }
       img {
         height: 100%;
