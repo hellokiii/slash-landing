@@ -10,24 +10,74 @@ header {
   @include mobile {
     height: $header-height-mobile;
   }
+
+  .side-slider {
+    position: fixed;
+    top: 0px;
+    left: -180px;
+    width: 180px;
+    height: 100vh;
+    min-height: 800px;
+    background: #ffffff;
+    border-radius: 0px 8px 8px 0px;
+    padding: 5px 16px 16px 20px;
+    transition: transform 0.5s ease-in-out 0.3s;
+    &.active {
+      display: block;
+      transform: translate(180px, 0);
+    }
+
+    .close-side-slider {
+      display: flex;
+      justify-content: end;
+      img {
+        position: relative;
+        right: -10px;
+      }
+    }
+    .link-container {
+      color: black;
+      @include font-footer-subtitle;
+
+      > div {
+        display: flex;
+        align-items: center;
+        height: 40px;
+        border-bottom: 0.5px solid #CCCCDB;;
+      }
+    }
+  }
 }
 
 .navbar-container {
   padding: 20px 0;
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   text-shadow: 0px 2px 4px #00004933;
+  @include mobile {
+    flex-direction: row-reverse;
+  }
   .navbar-left {
     margin-left: 2px;
     flex: 1;
+    @include mobile {
+      flex: 0;
+    }
     .logo {
       width: 96px;
       height: 20px;
     }
   }
   .navbar-right {
+    @include mobile {
+      flex: 1;
+    }
     > span {
       margin-left: 20px;
+      @include mobile {
+        margin-left: 0px;
+      }
       a {
         &:not(:hover) {
           text-decoration: none;
@@ -114,6 +164,9 @@ footer {
     @include large-pc {
       height: 444px;
       padding-top: 84px;
+    }
+    @include mobile {
+      padding-top: 32px;
     }
     .section1-title {
       @include font-title;
@@ -345,7 +398,7 @@ footer.section6 {
   position: relative;
   @include mobile {
     height: 538px;
-    background-color: $light-blue
+    background-color: $light-blue;
   }
   .container {
     position: relative;

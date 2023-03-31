@@ -69,11 +69,13 @@ if (history.scrollRestoration) {
 addEventListener('load', () => {
   setSectionsStickyPosition();
   observeSideNavTransition();
+  setSideSliderEvent();
 });
 
 addEventListener('resize', () => {
   setSectionsStickyPosition();
   setSideNavStickyPosition();
+  setSideSliderEvent();
 });
 
 const section3Video = document.querySelector('video.section3-main');
@@ -81,3 +83,17 @@ section3Video.addEventListener('loadeddata', () => {
   setSectionsStickyPosition();
   setSideNavStickyPosition();
 });
+
+function setSideSliderEvent() {
+  const sideSliderOpenButton = document.querySelector('.open-side-slider');
+  console.log(sideSliderOpenButton);
+  sideSliderOpenButton.addEventListener('click', () => {
+    const sideSlider = document.querySelector('.side-slider');
+    sideSlider.classList.add('active');
+  });
+  const sideSliderCloseButton = document.querySelector('.close-side-slider');
+  sideSliderCloseButton.addEventListener('click', () => {
+    const sideSlider = document.querySelector('.side-slider');
+    sideSlider.classList.remove('active');
+  });
+}
