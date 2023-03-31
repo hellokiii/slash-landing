@@ -61,7 +61,7 @@ $header-height-mobile: 60px;
 }
 
 @mixin mobile {
-  @media (max-width: 600px) {
+  @media (max-width: 576px) {
     @content;
   }
 }
