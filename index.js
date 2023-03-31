@@ -86,13 +86,19 @@ section3Video.addEventListener('loadeddata', () => {
 
 function setSideSliderEvent() {
   const sideSliderOpenButton = document.querySelector('.open-side-slider');
-  console.log(sideSliderOpenButton);
-  sideSliderOpenButton.addEventListener('click', () => {
+  sideSliderOpenButton.addEventListener('click', (e) => {
+    e.stopPropagation();
     const sideSlider = document.querySelector('.side-slider');
     sideSlider.classList.add('active');
   });
-  const sideSliderCloseButton = document.querySelector('.close-side-slider');
-  sideSliderCloseButton.addEventListener('click', () => {
+
+  const main = document.querySelector('main');
+  const sideSliderCloseButton = document.querySelector('.close-side-slider img');
+  main.addEventListener('click', (e) => {
+    const sideSlider = document.querySelector('.side-slider');
+    sideSlider.classList.remove('active');
+  });
+  sideSliderCloseButton.addEventListener('click', (e) => {
     const sideSlider = document.querySelector('.side-slider');
     sideSlider.classList.remove('active');
   });
