@@ -47,6 +47,24 @@ $primary-light: #ccccdb;
 $secondary-blue: #0000b0;
 $secondary-lime: #b2ff85;
 
+
+$container-width: 1200px;
+$container-width-mobile: 320px;
+$header-height: 76px;
+$header-height-mobile: 60px;
+
+@mixin large-pc {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: 600px) {
+    @content;
+  }
+}
+
 // font
 @mixin font-title {
   font-family: PyeongChang Peace;
@@ -54,6 +72,11 @@ $secondary-lime: #b2ff85;
   font-weight: 700;
   line-height: 72px;
   letter-spacing: 2px;
+
+  @include mobile {
+    font-size: 24px;
+    line-height: 36px;
+  }
 }
 @mixin font-subtitle {
   font-family: PyeongChang;
@@ -61,6 +84,12 @@ $secondary-lime: #b2ff85;
   font-weight: 700;
   line-height: 64px;
   letter-spacing: 2px;
+
+  @include mobile {
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: 0px;
+  }
 }
 @mixin font-description {
   font-family: PyeongChang;
@@ -68,6 +97,12 @@ $secondary-lime: #b2ff85;
   font-weight: 400;
   line-height: 28px;
   letter-spacing: 0.2px;
+
+  @include mobile {
+    font-size: 10px;
+    line-height: 20px;
+    letter-spacing: 0px;
+  }
 }
 @mixin font-footer-title {
   font-family: Pretendard;
@@ -75,7 +110,6 @@ $secondary-lime: #b2ff85;
   font-weight: 700;
   line-height: 36px;
   letter-spacing: 0.28px;
-  text-align: left;
 }
 @mixin font-footer-subtitle {
   font-family: Pretendard;
@@ -91,8 +125,8 @@ $secondary-lime: #b2ff85;
   font-weight: 400;
   line-height: 20px;
   letter-spacing: 0.2px;
-  text-align: left;
 }
+
 * {
   box-sizing: border-box;
 }
@@ -102,12 +136,24 @@ html {
 body {
   margin: 0;
   color: white;
-  min-width: 1200px;
+  min-width: $container-width;
   @include font-description;
+
+  @include mobile {
+    min-width: $container-width-mobile
+  }
 }
 
-@mixin large-pc {
-  @media (min-width: 1440px) {
-    @content;
+.for-pc {
+  display: block;
+  @include mobile {
+    display: none;
+  }
+}
+
+.for-mobile {
+  display: none;
+  @include mobile {
+    display: block;
   }
 }

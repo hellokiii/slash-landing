@@ -58,12 +58,47 @@ body {
   line-height: 28px;
   letter-spacing: 0.2px;
 }
+@media (max-width: 600px) {
+  body {
+    font-size: 10px;
+    line-height: 20px;
+    letter-spacing: 0px;
+  }
+}
+@media (max-width: 600px) {
+  body {
+    min-width: 320px;
+  }
+}
+
+.for-pc {
+  display: block;
+}
+@media (max-width: 600px) {
+  .for-pc {
+    display: none;
+  }
+}
+
+.for-mobile {
+  display: none;
+}
+@media (max-width: 600px) {
+  .for-mobile {
+    display: block;
+  }
+}
 
 header {
   position: fixed;
   width: 100%;
   z-index: 100;
   height: 76px;
+}
+@media (max-width: 600px) {
+  header {
+    height: 60px;
+  }
 }
 
 .navbar-container {
@@ -104,17 +139,51 @@ footer {
     height: 1080px;
   }
 }
+@media (max-width: 600px) {
+  section,
+  footer {
+    position: static;
+  }
+}
 
 .container {
   width: 1200px;
   margin: 0 auto;
   height: 100%;
 }
+@media (max-width: 600px) {
+  .container {
+    width: 320px;
+  }
+}
 
+@media (max-width: 600px) {
+  .section3,
+  .section4,
+  .section5 {
+    background-color: white !important;
+    position: static;
+  }
+  .section3 .container,
+  .section4 .container,
+  .section5 .container {
+    width: 340px;
+    background-color: #0000b0;
+    border-radius: 20px;
+    height: 437px;
+    margin: 8px auto;
+    padding: 24px 20px 0px 20px;
+  }
+}
 .section1 {
   background-color: #000049;
-  padding-top: 76px;
   height: auto;
+  padding-top: 76px;
+}
+@media (max-width: 600px) {
+  .section1 {
+    padding-top: 60px;
+  }
 }
 .section1 .section1-upper {
   left: 0;
@@ -126,6 +195,13 @@ footer {
   width: 100%;
   height: 100%;
   object-fit: fill;
+}
+@media (max-width: 600px) {
+  .section1 .section1-upper video {
+    margin: 0 auto;
+    width: 340px;
+    height: 420px;
+  }
 }
 .section1 .section1-bottom {
   display: flex;
@@ -147,10 +223,20 @@ footer {
   line-height: 72px;
   letter-spacing: 2px;
 }
+@media (max-width: 600px) {
+  .section1 .section1-bottom .section1-title {
+    font-size: 24px;
+    line-height: 36px;
+  }
+}
 .section1 .section1-bottom .section1-description {
-  width: 720px;
   margin: 16px 0 48px;
   text-align: center;
+}
+@media (max-width: 600px) {
+  .section1 .section1-bottom .section1-description {
+    margin: 8px 0 24px;
+  }
 }
 
 .section2 {
@@ -160,6 +246,11 @@ footer {
 .section2 .section2-main {
   width: 100vw;
   min-width: 1200px;
+}
+@media (max-width: 600px) {
+  .section2 .section2-main {
+    min-width: 320px;
+  }
 }
 
 .section3 {
@@ -171,6 +262,14 @@ footer {
   height: 100%;
   object-fit: fill;
 }
+@media (max-width: 600px) {
+  .section3 video {
+    border-radius: 20px;
+    width: 340px;
+    height: 437px;
+    margin: 8px auto;
+  }
+}
 
 .section4 {
   background-color: #0000b0;
@@ -178,6 +277,13 @@ footer {
 }
 .section4 .container {
   display: flex;
+}
+@media (max-width: 600px) {
+  .section4 .container {
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 .section4 .container .section4-left {
   flex: 1;
@@ -191,6 +297,14 @@ footer {
 @media (min-width: 1440px) {
   .section4 .container .section4-left .section4-main {
     margin-top: 118px;
+  }
+}
+@media (max-width: 600px) {
+  .section4 .container .section4-left .section4-main {
+    position: static;
+    margin-top: 0px;
+    width: 337px;
+    height: 301px;
   }
 }
 .section4 .container .section4-right {
@@ -209,6 +323,15 @@ footer {
     margin-bottom: 187px;
   }
 }
+@media (max-width: 600px) {
+  .section4 .container .section4-sentences {
+    margin-bottom: 0px;
+    margin-top: 24px;
+  }
+  .section4 .container .section4-sentences .section4-description {
+    margin-bottom: 0px;
+  }
+}
 .section4 .container .section4-sentences .section4-title {
   font-family: PyeongChang;
   font-size: 48px;
@@ -216,6 +339,18 @@ footer {
   line-height: 64px;
   letter-spacing: 2px;
   margin: 20px 0;
+}
+@media (max-width: 600px) {
+  .section4 .container .section4-sentences .section4-title {
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: 0px;
+  }
+}
+@media (max-width: 600px) {
+  .section4 .container .section4-sentences .section4-title {
+    margin: 0px 0px 8px;
+  }
 }
 
 .section5 {
@@ -246,6 +381,13 @@ footer {
   letter-spacing: 2px;
   margin: 20px 0;
 }
+@media (max-width: 600px) {
+  .section5 .container .section5-left .section5-sentences .section5-title {
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: 0px;
+  }
+}
 .section5 .container .section5-left .section5-sentences .section5-description {
   width: 534px;
 }
@@ -270,8 +412,24 @@ footer {
   display: flex;
   justify-content: center;
 }
-.badge-container img:first-child {
+@media (max-width: 600px) {
+  .badge-container {
+    flex-direction: column;
+  }
+  .badge-container a:first-child {
+    margin-bottom: 16px;
+  }
+  .badge-container a:first-child img {
+    width: 180px;
+  }
+}
+.badge-container a:first-child {
   margin-right: 46px;
+}
+@media (max-width: 600px) {
+  .badge-container img {
+    width: 180px;
+  }
 }
 
 .nav-section {
@@ -331,6 +489,12 @@ footer.section6 .section6-title {
   margin-bottom: 48px;
   text-align: center;
 }
+@media (max-width: 600px) {
+  footer.section6 .section6-title {
+    font-size: 24px;
+    line-height: 36px;
+  }
+}
 @media (min-width: 1440px) {
   footer.section6 .section6-title {
     margin-top: 439px;
@@ -355,7 +519,6 @@ footer .footer-title {
   font-weight: 700;
   line-height: 36px;
   letter-spacing: 0.28px;
-  text-align: left;
   margin-bottom: 16px;
   margin-left: 3px;
 }
@@ -382,7 +545,6 @@ footer .footer-description {
   font-weight: 400;
   line-height: 20px;
   letter-spacing: 0.2px;
-  text-align: left;
   margin-bottom: 10px;
 }
 footer .footer-description span {
@@ -398,7 +560,6 @@ footer .footer-contact {
   font-weight: 400;
   line-height: 20px;
   letter-spacing: 0.2px;
-  text-align: left;
   border-top: 0.5px solid white;
   padding-top: 12px;
 }
