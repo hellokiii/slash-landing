@@ -35,7 +35,7 @@ function observeSideNavTransition() {
 }
 
 function setSectionsStickyPosition() {
-  Array.from(document.querySelectorAll('section')).map((el) => {
+  Array.from(document.querySelectorAll('section.sticky')).map((el) => {
     const { clientHeight } = el;
     const browserHeight = document.documentElement.clientHeight;
     el.style.top = `${Math.min(0, browserHeight - clientHeight)}px`;
@@ -70,6 +70,7 @@ addEventListener('load', () => {
   setSectionsStickyPosition();
   observeSideNavTransition();
   setSideSliderEvent();
+  addEventListener('scroll', handleScroll);
 });
 
 addEventListener('resize', () => {
@@ -102,4 +103,35 @@ function setSideSliderEvent() {
     const sideSlider = document.querySelector('.side-slider');
     sideSlider.classList.remove('active');
   });
+}
+
+function handleScroll() {
+  const sections = document.querySelectorAll('.section');
+  const currentVisibleSection =
+    Array.from(sections)
+      .map((section) => {
+        const sectionNumber = section.className.match(/section(\d)/)[1];
+        const sectionStickyTop = ~~section.style.top.match(/-?\d+/)?.[0] ?? 0;
+        const sectionCurrentTop = section.getBoundingClientRect().top;
+        return {
+          sectionNumber,
+          sectionStickyTop,
+          sectionCurrentTop,
+        };
+      })
+      .find(({ sectionStickyTop, sectionCurrentTop }) => sectionCurrentTop > sectionStickyTop) ?? {};
+
+  const { sectionNumber = 6, sectionCurrentTop = 0 } = currentVisibleSection;
+  if (sectionNumber > 1 && sectionNumber < 6) {
+    const previouseSection = document.querySelector(`.section${sectionNumber - 1}`);
+    const previouseSectionHeight = previouseSection.clientHeight;
+    const opacity = Math.min(1, (sectionCurrentTop - 10) / (previouseSectionHeight / 2));
+    previouseSection.style.opacity = opacity;
+  }
+}
+
+function getScrollTop() {
+  if (!document.body) return 0;
+  const scrollTop = document.documentElement ? document.documentElement.scrollTop || document.body.scrollTop : document.body.scrollTop;
+  return scrollTop;
 }

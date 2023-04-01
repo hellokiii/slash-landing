@@ -46,6 +46,7 @@
 
 html {
   scroll-behavior: smooth;
+  background-color: #000049;
 }
 
 body {
@@ -193,9 +194,7 @@ section,
 footer {
   height: 900px;
   position: sticky;
-  top: 0;
   overflow: hidden;
-  scroll-snap-align: start;
 }
 @media (min-width: 1440px) {
   section,

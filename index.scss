@@ -94,9 +94,7 @@ section,
 footer {
   height: 900px;
   position: sticky;
-  top: 0;
   overflow: hidden;
-  scroll-snap-align: start;
   @include large-pc {
     height: 1080px;
   }
