@@ -267,6 +267,7 @@ footer {
   background-color: $secondary-blue;
   position: relative;
   display: flex;
+  z-index: 10;
   .container {
     position: relative;
     display: flex;

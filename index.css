@@ -419,6 +419,7 @@ footer {
   background-color: #0000b0;
   position: relative;
   display: flex;
+  z-index: 10;
 }
 .section5 .container {
   position: relative;
