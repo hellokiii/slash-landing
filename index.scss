@@ -100,9 +100,6 @@ footer {
   @include large-pc {
     height: 1080px;
   }
-  @include mobile {
-    position: static;
-  }
 }
 .container {
   width: 1200px;
@@ -118,7 +115,6 @@ footer {
   .section4,
   .section5 {
     background-color: white !important;
-    position: static;
     height: auto;
     .container {
       width: 340px;
