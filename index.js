@@ -1,3 +1,6 @@
+let browserWidth;
+let browserHeight;
+
 addEventListener('load', () => {
   setSectionsStickyPosition();
   setSideSliderEvent();
@@ -5,6 +8,11 @@ addEventListener('load', () => {
 });
 
 addEventListener('resize', () => {
+  const {clientWidth, clientHeight} = document.documentElement
+  if(browserWidth === clientWidth && browserHeight === clientHeight ) return;
+
+  browserWidth = clientWidth;
+  browserHeight = clientHeight;
   setSectionsStickyPosition();
   setSideNavStickyPosition();
   setVideoSrc();
