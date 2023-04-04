@@ -123,7 +123,7 @@ function setVideoSrc() {
   const section1VideoEl = document.querySelector('.section1-main');
   const section3VideoEl = document.querySelector('.section3-main');
 
-  if (document.documentElement.clientWidth > MobileMaxWidth) {
+  if (window.innerWidth > MobileMaxWidth) {
     if (section1VideoEl.src.split('/').at(-1) !== section1VideoPCSource.split('/').at(-1)) {
       section1VideoEl.src = section1VideoPCSource;
       section3VideoEl.src = section3VideoPCSource;
