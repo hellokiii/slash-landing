@@ -116,10 +116,14 @@ function setVideoSrc() {
   const section3VideoEl = document.querySelector('.section3-main');
 
   if (document.documentElement.clientWidth > MobileMaxWidth) {
-    section1VideoEl.src = section1VideoPCSource;
-    section3VideoEl.src = section3VideoPCSource;
+    if (section1VideoEl.src.split('/').at(-1) !== section1VideoPCSource.split('/').at(-1)) {
+      section1VideoEl.src = section1VideoPCSource;
+      section3VideoEl.src = section3VideoPCSource;
+    }
   } else {
-    section1VideoEl.src = section1VideoMobileSource;
-    section3VideoEl.src = section13ideoMobileSource;
+    if (section1VideoEl.src.split('/').at(-1) !== section1VideoMobileSource.split('/').at(-1)) {
+      section1VideoEl.src = section1VideoMobileSource;
+      section3VideoEl.src = section13ideoMobileSource;
+    }
   }
 }
